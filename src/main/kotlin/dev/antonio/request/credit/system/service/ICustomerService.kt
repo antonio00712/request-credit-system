@@ -7,5 +7,5 @@ interface ICustomerService{
 
     fun findById(id: Long): Customer
 
-    fun delete(id: Long): Customer
+    fun delete(id: Long)
 }
