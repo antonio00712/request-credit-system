@@ -5,6 +5,7 @@ import dev.antonio.request.credit.system.dto.CreditView
 import dev.antonio.request.credit.system.dto.CreditViewList
 import dev.antonio.request.credit.system.entity.Credit
 import dev.antonio.request.credit.system.service.impl.CreditService
+import jakarta.validation.Valid
 import org.apache.coyote.Response
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -24,7 +25,7 @@ class CreditResource (
     private val creditService: CreditService
 ) {
     @PostMapping
-    fun saveCredit(@RequestBody creditDto: CreditDto): ResponseEntity<String> {
+    fun saveCredit(@RequestBody @Valid creditDto: CreditDto): ResponseEntity<String> {
         val credit: Credit = this.creditService.save(creditDto.toEntity())
         val message = "Credit ${credit.creditCode} - Customer ${credit.customer?.firstName} saved!"
         return ResponseEntity.status(HttpStatus.CREATED).body(message)

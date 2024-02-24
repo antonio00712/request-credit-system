@@ -1,14 +1,16 @@
 package dev.antonio.request.credit.system.dto
 
 import dev.antonio.request.credit.system.entity.Customer
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
 import java.math.BigDecimal
 
 data class CustomerUpdateDto (
-    val firstName: String,
-    val lastName: String,
-    val income: BigDecimal,
-    val zipCode: String,
-    val street: String
+    @field:NotEmpty(message = "Input cannot be empty") val firstName: String,
+    @field:NotEmpty(message = "Input cannot be empty") val lastName: String,
+    @field:NotNull(message = "Input cannot be empty") val income: BigDecimal,
+    @field:NotEmpty(message = "Input cannot be empty") val zipCode: String,
+    @field:NotEmpty(message = "Input cannot be empty") val street: String
 ) {
   fun toEntity(customer: Customer): Customer {
       customer.firstName = this.firstName
