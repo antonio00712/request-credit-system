@@ -23,7 +23,7 @@ class RestExceptionHandler {
         }
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad request. Consult the documantation",
+                title = "Bad request. Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),
@@ -36,7 +36,7 @@ class RestExceptionHandler {
     fun handlerValidException(ex: DataAccessException): ResponseEntity<ExceptionDetails>{
         return ResponseEntity(
             ExceptionDetails(
-                title = "Conflict. Consult the documantation",
+                title = "Conflict. Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.CONFLICT.value(),
                 exception = ex.javaClass.toString(),
@@ -49,7 +49,7 @@ class RestExceptionHandler {
     fun handlerValidException(ex: BusinessException): ResponseEntity<ExceptionDetails>{
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad request. Consult the documantation",
+                title = "Bad request. Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),
@@ -62,7 +62,7 @@ class RestExceptionHandler {
     fun handlerValidException(ex: IllegalArgumentException): ResponseEntity<ExceptionDetails>{
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad request. Consult the documantation",
+                title = "Bad request. Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),
