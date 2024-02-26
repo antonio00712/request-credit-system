@@ -64,8 +64,6 @@ class CreditRepositoryTest {
 
     }
 
-
-
     private fun buildCredit(
         creditValue: BigDecimal = BigDecimal.valueOf(500.0),
         dayFirstInstallment: LocalDate = LocalDate.of(2024, Month.APRIL, 22),
